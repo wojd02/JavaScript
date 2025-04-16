@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulando DOM</title>
+    <style>
+        body{
+            background-color: rgb(160, 48, 48);
+            font-size: 1.3em;
+        }
+        strong{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Iniciando os estudos DOM</h1>
+    <p>Vendo o resultado na tela</p>
+    <p>aprendendo a usar o <strong>DOM</strong> em JS</p>
+    <div id="msg">Clique aqui</div>
+    <script>
+        var p1 = window.document.getElementsByTagName('p')[0]
+        window.document.write(p1.innerText)
+        msg.style.background = 'black'
+        msg.style.color = 'white'
+        //window.document.getElementsByClassName('class')[position] class
+        //window.document.getElementsByName('name')[position] name
+        //window.document.getElementById('id') ID
+        //window.document.getElementsByTagName('tag')[position] tag
+        //window.document.querySelector('tag #or. id or class') sintaxe html
+    </script>
+</body>
+</html>
