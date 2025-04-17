@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio-001</title>
+    <style>
+        div#botão{
+            display: block;
+            padding: 10px;
+            background-color: lightgray;
+            width: 150px;
+            height: 50px;
+            line-height: 50px;
+            border: 1px solid black;
+            margin: auto;
+            text-align: center;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div id="botão">Inicie o desafio</div>
+    <script>
+        var bot = window.document.getElementById('botão')
+        bot.addEventListener('click', clickar)
+        function clickar(){
+            var nome = window.prompt('Qual seu nome?')
+            var idade = window.prompt(`Olá, ${nome}! Quantos anos você tem?`)
+            window.alert(`Acabei de conhecer ${nome}, que tem ${idade} anos de idade!`)
+        }
+    </script>
+</body>
+</html>

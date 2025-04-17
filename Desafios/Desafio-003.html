@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio-001</title>
+    <style>
+        div#botão{
+            display: block;
+            padding: 10px;
+            background-color: lightgray;
+            width: 200px;
+            height: 50px;
+            border: 1px solid black;
+            margin: auto;
+            text-align: center;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div id="botão">Antecessor e Sucessor</div>
+    <script>
+        var bot = document.querySelector('div#botão')
+        bot.addEventListener('click', clicar)
+        function clicar(){
+            var n = window.prompt('Digite um número inteiro qualquer')
+            var n_c = Number.parseInt(n)
+            window.alert(`O antecessor de ${n_c} é ${n_c - 1} e o sucessor é ${n_c + 1}`)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio-001</title>
+    <style>
+        div#botão1{
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            background-color: lightgray;
+            width: 100px;
+            border: 1px solid black;
+        }
+        div#botão2{
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            background-color: lightgray;
+            width: 100px;
+            border: 1px solid black;
+        }
+        div#botão3{
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            background-color: lightgray;
+            width: 100px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="botão1">Botão 1</div>
+    <div id="botão2">Botão 2</div>
+    <div id="botão3">Botão 3</div>
+    <script>
+        var bot1 = window.document.getElementById('botão1')
+        var bot2 = window.document.getElementById('botão2')
+        var bot3 = window.document.getElementById('botão3')
+        bot1.addEventListener('click', clickar1)
+        bot2.addEventListener('click', clickar2)
+        bot3.addEventListener('click', clickar3)
+        function clickar1(){
+            window.alert('Você clicou no botão 1!')
+        }
+        function clickar2(){
+            window.alert('Você clicou no botão 2!')
+        }
+        function clickar3(){
+            window.alert('Você clicou no botão 3!')
+        }
+    </script>
+</body>
+</html>
