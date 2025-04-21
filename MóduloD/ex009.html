@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nacionalidade</title>
+</head>
+<body>
+    <h1>Estrangeiro ou não?</h1>
+    <form action="#">
+        Digite aqui sua nacionalidade: <input type="text" id="txtnac">
+        <input type="button" value="Enviar" onclick="definir()">
+        <div id="res">Sua resposta: </div>
+    </form>
+    <script>
+        let res = document.querySelector('div#res')
+        txtnac = document.getElementById('txtnac')
+        
+        function definir(){
+        let nac = String(txtnac.value)
+        if (nac != 'Brasileiro'){
+            res.innerHTML += 'Você é estrangeiro'
+        }else{
+            res.innerHTML += 'Você é Brasileiro'
+        }
+        }
+    </script>
+</body>
+</html>

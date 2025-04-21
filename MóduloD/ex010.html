@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETRAN</title>
+</head>
+<body>
+    <h1>Multas</h1>
+    <form action="#">
+        Limite de velocidade:<input type="number" name="nvel" id="vel">
+        <input type="button" value="Verificar" onclick="calcular()">
+        <div id="res">
+        </div>
+    </form>
+    <script>
+        function calcular(){
+            var txtv = window.document.querySelector('input#vel')
+            let vel = Number(txtv.value)
+            var res = document.getElementById('res')
+            res.innerHTML = `Sua velocidade é de ${vel}Km/h`
+            if (vel < 50){
+            res.innerHTML += ` e se enquadra nos parametros de segurança`
+            }else{
+                res.innerHTML += ` e não se enquadra nos parametros de segurança, MULTADO!`
+            }
+        }
+    </script>
+</body>
+</html>
