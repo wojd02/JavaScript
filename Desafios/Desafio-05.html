@@ -37,7 +37,7 @@
 
         function conversor(){
             let dist = window.prompt('Digite uma distância em metros (m)')
-            medidas.innerHTML = `<h2>A distância de ${dist} metros, corresponde a...</h2><p>${(dist / 1000).toFixed(3)} quilômetros (Km)</p><p>${(dist / 100).toFixed(3)} hectômetros (Hm)</p><p>${(dist / 10).toFixed(3, 1)} decâmetros (Dam)</p><p>${(dist * 10).toFixed(3, 1)} decímetros (Dm)</p><p>${(dist * 100).toFixed(3)} centímetros (Cm)</p><p>${Math.trunc(((dist * 1000))).toFixed(3)} milímetros (Mm)</p>`
+            medidas.innerHTML = `<h2>A distância de ${parseFloat(dist).toLocaleString('pt-BR')} metros, corresponde a...</h2><p>${parseFloat((dist / 1000)).toLocaleString('pt-BR')} quilômetros (Km)</p><p>${parseFloat((dist / 100)).toLocaleString('pt-BR')} hectômetros (Hm)</p><p>${parseFloat((dist / 10)).toLocaleString('pt-BR')} decâmetros (Dam)</p><p>${parseFloat((dist * 10)).toLocaleString('pt-BR')} decímetros (Dm)</p><p>${parseFloat((dist * 100)).toLocaleString('pt-BR')} centímetros (Cm)</p><p>${(parseFloat((dist * 1000)).toLocaleString('pt-BR')).toLocaleString('pt-BR')} milímetros (Mm)</p>`
 
         }
     </script>
