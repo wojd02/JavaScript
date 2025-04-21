@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troco</title>
+    <style>
+        div#botão{
+            display: block;
+            padding: 10px;
+            background-color: lightgray;
+            width: 200px;
+            height: 50px;
+            border: 1px solid black;
+            margin: auto;
+            text-align: center;
+            font-size: 1.5em;
+        }
+        h1{
+            text-align: center;
+        }
+        div#medidas{
+            text-align: center;
+            padding-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversos de medidas</h1>
+    <div id="botão">converter</div>
+    <div id="medidas">
+        Clique no botão acima para iniciar
+    </div>
+    <script>
+        let start = document.getElementById('botão')
+        start.addEventListener('click', conversor)
+
+        function conversor(){
+            let dist = window.prompt('Digite uma distância em metros (m)')
+            medidas.innerHTML = `<h2>A distância de ${dist} metros, corresponde a...</h2><p>${(dist / 1000).toFixed(3)} quilômetros (Km)</p><p>${(dist / 100).toFixed(3)} hectômetros (Hm)</p><p>${(dist / 10).toFixed(3, 1)} decâmetros (Dam)</p><p>${(dist * 10).toFixed(3, 1)} decímetros (Dm)</p><p>${(dist * 100).toFixed(3)} centímetros (Cm)</p><p>${Math.trunc(((dist * 1000))).toFixed(3)} milímetros (Mm)</p>`
+
+        }
+    </script>
+</body>
+</html>
