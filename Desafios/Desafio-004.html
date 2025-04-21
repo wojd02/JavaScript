@@ -30,12 +30,9 @@
         function comprar(){
             let name = window.prompt('Qual produto deseja comprar?: ')
             let preço = window.prompt('Quanto custa o produto?: ')
-            var preço_c = preço.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
             let pago = window.prompt('Qual foi o valor total que você mandou: ')
-            var pago_c = pago.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
             let troco = Number(pago) - Number(preço)
-            var troco_c = troco.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
-            window.alert(`Você comprou ${name} que custava R$${preço_c} e depositou R$${pago_c} e seu troco é de R$${troco_c}`)
+            window.alert(`Você comprou ${name} que custava R$${parseFloat((preço)).toLocaleString('pt-BR')} e depositou R$${parseFloat((pago)).toLocaleString('pt-BR')} e seu troco é de R$${parseFloat((troco)).toLocaleString('pt-BR')}`)
         }
     </script>
 </body>
