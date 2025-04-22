@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troco</title>
+    <style>
+        div#botão{
+            display: block;
+            padding: 10px;
+            background-color: lightgray;
+            width: 200px;
+            height: 50px;
+            border: 1px solid black;
+            margin: auto;
+            text-align: center;
+            font-size: 1.5em;
+        }
+        div#botão:hover{
+            cursor: pointer;
+            background-color: greenyellow;
+        }
+        h1{
+            text-align: center;
+        }
+        div#medidas{
+            text-align: center;
+            padding-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversos R$ >> US$</h1>
+    <div id="botão">converter</div>
+    <div id="medidas">
+        Clique no botão acima para iniciar
+    </div>
+    <script>
+        let taxa_dol = window.prompt('Quanto esta a conversão no dia de hoje?')
+        let conversor = document.querySelector('div#botão')
+        conversor.addEventListener('click', converter)
+        function converter(){
+            let mostrar = document.querySelector('div#medidas')
+            let carteira = window.prompt('Quanto R$ você tem na carteira?')
+            dol = Number(carteira) * Number(taxa_dol)
+            mostrar.innerHTML = `<h2>Carteira Atual</h2><p>Sua carteira convertida para dólares tem US$ ${String(dol.toFixed(2)).replace('.', ',')}</p>`
+        }
+    </script>
+</body>
+</html>

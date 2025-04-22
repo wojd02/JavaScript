@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troco</title>
+    <style>
+        div#botão{
+            display: block;
+            padding: 10px;
+            background-color: lightgray;
+            width: 200px;
+            height: 50px;
+            border: 1px solid black;
+            margin: auto;
+            text-align: center;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+        h1{
+            text-align: center;
+        }
+        div#medidas{
+            text-align: center;
+            padding-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversos de temperaturas</h1>
+    <div id="botão">converter</div>
+    <div id="medidas">
+        Clique no botão acima para iniciar
+    </div>
+    <script>
+        let conversor = window.document.querySelector('div#botão')
+        let medida = document.querySelector('div#medidas')
+        conversor.addEventListener('click', converter)
+        function converter(){
+            let temperatura = window.prompt('Digite uma temperatura em ºC (celsius)')
+            let calculo_F = (temperatura * 9 / 5) + 32
+            let calculo_K = parseFloat(temperatura) + parseFloat(273.15)
+            medida.innerHTML = `<h2>A temperatura de ${temperatura.replace('.', ',')}ºC, corresponde a...</h2><p>${String(calculo_F).replace('.', ',')} ºF (Fahrenheit)</p><p>${String(calculo_K.toFixed(2)).replace('.', ',')} K (Kelvin)`
+        }
+    </script>
+</body>
+</html>
