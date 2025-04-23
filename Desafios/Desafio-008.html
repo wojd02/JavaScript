@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troco</title>
+    <style>
+        div#botão{
+            display: block;
+            padding: 10px;
+            background-color: lightgray;
+            width: 200px;
+            height: 50px;
+            border: 1px solid black;
+            margin: auto;
+            text-align: center;
+            font-size: 1.5em;
+        }
+        div#botão:hover{
+            cursor: pointer;
+            background-color: lightcoral;
+        }
+        h1{
+            text-align: center;
+        }
+        div#visual{
+            text-align: center;
+            padding-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Desconto</h1>
+    <div id="botão">Descontar</div>
+    <div id="visual">
+        Clique no botão acima para iniciar
+    </div>
+    <script>
+        let desconto = document.querySelector('div#botão')
+        let visual = document.getElementById('visual')
+        desconto.addEventListener('click', descontar)
+        function descontar(){
+            let name = window.prompt('Qual produto deseja comprar')
+            let preço = Number(window.prompt('Qual o preço do produto'))
+            let novo_preço = preço * 10 / 100
+            preço_desconto = preço - novo_preço
+            visual.innerHTML = `<h2>Calculando desconto de 10% para ${name}</h2>
+            <p>O preço original era R$${String(preço.toFixed(2)).replace('.', ',')}.</p>
+            <p>Você acaba de ganhar R$${String(novo_preço.toFixed(2)).replace('.', ',')} de desconto (-10%)</p>
+            <p>No fim, você vai pagar R$${String(preço_desconto.toFixed(2)).replace('.', ',')} no produto ${name}.</p>`   
+        }
+    </script>
+</body>
+</html>

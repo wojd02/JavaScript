@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bhaskara</title>
+    <style>
+        div#botão{
+            display: block;
+            padding: 10px;
+            background-color: lightgray;
+            width: 250px;
+            height: 50px;
+            border: 1px solid black;
+            margin: auto;
+            text-align: center;
+            line-height: 50px;
+            font-size: 1.2em;
+        }
+        div#botão:hover{
+            cursor: pointer;
+            background-color: lightblue;
+        }
+        h1{
+            text-align: center;
+            color: darkred;
+        }
+        div#texto{
+            text-align: center;
+            padding-top: 10px;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bhaskara</h1>
+    <div id="botão">x = (-b ± √(b² - 4ac)) / 2a</div>
+    <div id="texto">
+        Clique no botão acima para iniciar a fórmula!
+    </div>
+    <script>
+        let conversor = document.getElementById('botão')
+        conversor.addEventListener('click', calcular)
+        let texto = document.querySelector('div#texto')
+        function calcular(){
+            let a = window.prompt('Valor de A')
+            let b = window.prompt('Valor de B')
+            let c = window.prompt('Valor de C')
+            let bhaskara = b**2 - 4*a*c
+            texto.innerHTML = `<h2>Resolvendo Bhaskara</h2>
+            <p>A equação atual será ${a}x² + ${b}x + ${c} = 0</p>
+            <p>O cálculo realizado será Δ = ${b}² - 4 .${a} . ${c}</p>
+            <p>O valor calculado foi Δ = ${bhaskara}</p>`
+        }
+    </script>
+</body>
+</html>

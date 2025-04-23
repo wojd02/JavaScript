@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troco</title>
+    <style>
+        div#botão{
+            display: block;
+            padding: 10px;
+            background-color: lightgray;
+            width: 200px;
+            height: 50px;
+            border: 1px solid black;
+            margin: auto;
+            text-align: center;
+            font-size: 1.5em;
+        }
+        div#botão:hover{
+            cursor: pointer;
+            background-color: lightblue;
+        }
+        h1{
+            text-align: center;
+        }
+        div#texto{
+            text-align: center;
+            padding-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reajuste salarial</h1>
+    <div id="botão">Reajustar salário</div>
+    <div id="texto">
+        Clique no botão acima para iniciar o reajuste
+    </div>
+    <script>
+        let reajuste_v = window.document.getElementById('botão')
+        let texto = document.querySelector('div#texto')
+        reajuste_v.addEventListener('click', reajuste)
+        function reajuste(){
+            let name = window.prompt('Nome do funcionário')
+            let wage = Number(window.prompt(`Salário atual de ${name}`))
+            var wage_f = wage.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+            let readjustmet = window.prompt('Qual o aumento do salário(%)')
+            let wage_readjustment = parseFloat(wage) * parseFloat(readjustmet) / 100
+            let wage_readjustment_f = wage_readjustment.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+            let wage_sum = parseFloat(wage) + parseFloat(wage_readjustment)
+            let wage_sum_f = wage_sum.toLocaleString('pt-br', {style:'currency', currency: 'BRL'});
+            texto.innerHTML = `<h2>${name} recebeu um aumento salárial!</h2>
+            <p>O salário atual era ${wage_f}</p>
+            <p>Com um aumento de ${readjustmet}%, o salário vai aumentar ${wage_readjustment_f} no próximo mês.</p>
+            <p>O novo sálario de ${name} vai ser ${wage_sum_f}</p>`
+        }
+    </script>
+</body>
+</html>
