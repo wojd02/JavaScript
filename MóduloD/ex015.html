@@ -34,25 +34,29 @@
             background: #b3d5dab0;
             min-width: 470px;
             width: 30vw;
-            min-height: 500px;
+            min-height: 300px;
             height: auto;
             border-radius: 10px;
             padding: 5px;
         }
         p#texto{
             text-align: center;
+            margin: 50px 0px 0px 0px;
         }
         form{
             text-align: center;
             padding: 20px;
             padding-top: 15px;
         }
+        div#ano_de_nascimento{
+            margin: 40px 0px 20px 0px;
+        }
+        input#enviar{
+            margin: 20px 0px 0px 0px;
+        }
         div#imagem{
             text-align: center;
-            background: ;
             margin: auto;
-            width: 300px;
-            height: 300px;
             border-radius: 50%;
             
             transform: translate(0%, 25%);
@@ -68,8 +72,10 @@
         <h1>Verificador de idade</h1>
         <div id="main">
             <form action="#">
-                <label for="inumber">Ano de nascimento</label>
-                <input type="number" id="inumber"><br>
+                <div id="ano_de_nascimento">
+                    <label for="inumber">Ano de nascimento</label>
+                    <input type="number" id="inumber">
+                </div>
                 <label for="">sexo:</label>
                 <input type="radio" id="masc" name="sexo">
                 <label for="masc">Masculino</label><input type="radio" id="fem" name="sexo"> <label for="fem">Feminino</label><br>
@@ -86,6 +92,9 @@
         let botão = document.getElementById('enviar')
         botão.addEventListener('click', calcular)
         let imagem = document.getElementById('imagem')
+        let main = document.querySelector('div#main')
+        let bg_ano = document.querySelector('div#ano_de_nascimento')
+        let bg_enviar = document.querySelector('input#enviar')
         function calcular(){
             //calcular a idade
             let texto = document.getElementById('texto')
@@ -97,6 +106,13 @@
             let masc = document.getElementById('masc')
             let fem = document.getElementById('fem')
             texto.innerText = `Você tem ${idade} anos de idade`
+            main.style.height = '500px';
+            imagem.style.height = '300px';
+            imagem.style.width = '300px';
+            bg_ano.style.margin = 'auto'
+            bg_enviar.style.margin = 'auto'
+            texto.style.margin = 'auto'
+            texto.style.fontSize = '1.3em'
             //fim calcular idade
             //Definindo o sexo e faixa de idade
             if (fem.checked == true){
@@ -132,6 +148,13 @@
                 }else{
                     imagem.style.background = 'url(imagem/Mold-45-x.jpg)'
                 }
+            }
+            if (idade > 102 || idade < 0){
+                    window.alert('Idade inválida, tente novamente')
+                    imagem.style.background = ''
+                    setTimeout(function(){
+                        window.location.reload()
+                    }, 0);
             }
             //Fim definição sexo e faixa de idade
         }
