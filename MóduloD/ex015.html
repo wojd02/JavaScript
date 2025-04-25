@@ -33,14 +33,19 @@
             position: relative;
             background: #d9cdbfb0;
             min-width: 470px;
-            width: 49vw;
-            min-height: 400px;
+            width: 30vw;
+            min-height: 500px;
             height: auto;
             border-radius: 10px;
+            padding: 5px;
+        }
+        p#texto{
+            text-align: center;
         }
         form{
             text-align: center;
-            padding: 10px;
+            padding: 20px;
+            padding-top: 15px;
         }
         div#imagem{
             text-align: center;
@@ -50,7 +55,7 @@
             height: 300px;
             border-radius: 50%;
             
-            transform: translate(0%, 5%);
+            transform: translate(0%, 25%);
         }
         footer > p {
             text-align: center;
@@ -70,8 +75,9 @@
                 <label for="masc">Masculino</label>
                 <input type="checkbox" id="fem">
                 <label for="fem">Feminino</label><br>
-                <input type="submit">
+                <input type="submit" id="enviar">
             </form>
+            <p id="texto">texto</p>
             <div id="imagem"></div>
         </div>
         <footer id="foot">
@@ -79,28 +85,22 @@
         </footer>
     </div>
     <script>
-        let agora = new Date()
-        let hora = agora.getHours()
-        let texto = document.getElementById('texto')
+        let botão = document.getElementById('enviar')
+        botão.addEventListener('click', calcular)
         let imagem = document.getElementById('imagem')
-        let bg = document.querySelector('body')
         let main = document.getElementById('main')
         let foot = document.getElementById('foot')
-        if (hora > 4 && hora < 12){
-            texto.innerText = `Agora são ${hora} horas.`
-        }else if(hora > 12 && hora < 19){
-            texto.innerText = `Agora são ${hora} horas`
-            texto.style.color = 'white'
-            imagem.style.background = 'url(imagem/afternoon.jpg)'
-            bg.style.background = '#F28705'
-            main.style.background = '#682E20'
-        } else{
-            texto.innerText = `Agora são ${hora} horas`
-            texto.style.color = 'white'
-            foot.style.color = 'white'
-            imagem.style.background = 'url(imagem/night.jpg)'
-            bg.style.background = '#024873'
-            main.style.background = '#4C6979'
+        function calcular(){
+            //calcular a idade
+            let texto = document.getElementById('texto')
+            let agora = new Date()
+            let ano = agora.getFullYear()
+            let nascimento = document.getElementById('inumber')
+            let nascimento_valor = nascimento.value
+            let idade = Number(ano) - Number(nascimento_valor)
+            texto.innerText = `${idade}`
+            //fim calcular idade
+            
         }
     </script>
 </body>
