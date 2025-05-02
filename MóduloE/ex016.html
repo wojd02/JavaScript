@@ -12,11 +12,7 @@
 
         body{
             background-color:#4583ac;
-            position: absolute; 
-            top: 50%;
-            left: 50%;
             height: auto;
-            overflow: hidden;
         }
         h1{
             text-align: center;
@@ -26,11 +22,8 @@
             font-family: Arial, Helvetica, sans-serif;
             color: white;
         }
-        div#back{
-            transform: translate(-50%, -70%);
-        }
         div#main{
-            position: relative;
+            margin: auto;
             background: #e6e6e6;
             min-width: 470px;
             width: 30vw;
@@ -75,7 +68,7 @@
         }
         footer > p {
             text-align: center;
-            padding-top: 50px;
+            margin-top: 50px;
         }
     </style>
 </head>
@@ -90,14 +83,15 @@
                 <input type="number" id="fim"><br>
                 <label for="passo">Passo</label>
                 <input type="number" id="passo"><br>
-                <input type="submit" id="enviar">
+                <input type="submit" value="contar" id="enviar">
             </form>
-            <p id="texto">Preencha os dados acima para ver sua idade!</p>
+            <p id="texto">Sequência</p>
             <div id="imagem"></div>
         </div>
         <footer id="foot">
             <p>made by @wojd02</p>
         </footer>
     </div>
+    <script src="ex016.js"></script>
 </body>
 </html>
