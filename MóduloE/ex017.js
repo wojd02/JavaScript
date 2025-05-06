@@ -1,5 +1,6 @@
 let tradutor = document.getElementById('ouvir')
 tradutor.addEventListener('click', tab)
+
 function tab(){
     let numero_tabuada = document.getElementById('num')
     let num_c = Number(numero_tabuada.value)
