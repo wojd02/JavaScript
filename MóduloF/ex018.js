@@ -1,29 +1,49 @@
 let lista = []
 let n = document.getElementById('numero')
 let tradutor = document.getElementById('chamar')
+let finalizar = document.getElementById('finalizar')
+let seletor = document.getElementById('iselector')
+let res = document.getElementById('texto')
 tradutor.addEventListener('click', adicionar)
-function Isnum(n) {
-    if (n >= 0 && n <= 100){
+finalizar.addEventListener('click', stop)
+function Isnum(n){
+    if (n >= 0 && n <= 100 && n.length != 0){
         return true
     } else{
         return false
     }
 }
-function Inlist(n, lista){
-    if(lista.indexOf(Number(n) != -1)){
+function Inlist(n, l){
+    if(l.indexOf(Number(n)) != -1){
         return true
     } else{
         return false
     }
 }
 function adicionar(){
-    if(Isnum(n.value) && Inlist(n.value, lista)){
-        window.alert('Tudo ok')
+    if(Isnum(n.value) && !Inlist(n.value, lista)){
+        //window.alert('Tudo ok')
+        lista.push(Number(n.value))
+        res.innerHTML = ''
+        seletor.innerHTML += `<option>Valor ${Number(n.value)} adicionado a lista</option>`
     }else{
         window.alert('Erro')
     }
+    n.value=''
+    n.focus()
 
 }
+function stop(){
+    if (lista.length == 0){
+        window.alert('Adicione valores antes de finalizar!')
+    } else{
+        let menor = menor(lista)
+        res.innerHTML = ''
+        res.innerHTML = `<p>Ao todo temos ${lista.length} valores cadastrados</p><p>O menor valor presente na lista é ${menor}`
+
+    }
+}
+
 
 
 
