@@ -22,7 +22,6 @@ function Inlist(n, l){
 }
 function adicionar(){
     if(Isnum(n.value) && !Inlist(n.value, lista)){
-        //window.alert('Tudo ok')
         lista.push(Number(n.value))
         res.innerHTML = ''
         seletor.innerHTML += `<option>Valor ${Number(n.value)} adicionado a lista</option>`
@@ -37,9 +36,23 @@ function stop(){
     if (lista.length == 0){
         window.alert('Adicione valores antes de finalizar!')
     } else{
-        let menor = menor(lista)
+        let menor = 0
+        let maior = 0
+        let soma = 0
+        for (let c in lista){
+            soma += lista[c]
+            if(lista[c] == lista[0]){
+                menor = lista[c]
+                maior = lista[c]
+            }else if (menor > lista[c]){
+                menor = lista[c]
+            }
+            if (maior < lista[c]){
+                maior = lista[c]
+            }
+        }
         res.innerHTML = ''
-        res.innerHTML = `<p>Ao todo temos ${lista.length} valores cadastrados</p><p>O menor valor presente na lista é ${menor}`
+        res.innerHTML = `<p>Ao todo temos ${lista.length} valores cadastrados</p><p>O menor número da lista é ${menor}</p><p>O maior número da lista é ${maior}</p><p>A soma da lista é ${soma}</p><p>A média da lista é ${soma/lista.length}</p><p>Os número em ordem ficam ${lista.sort()}`
 
     }
 }
